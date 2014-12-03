@@ -6,14 +6,14 @@
 <head runat="server">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
     <link href="<%="https://www.passle.net/Style/PublishedPassleCSS?passleId="+PassleFeedShortCode%>" rel="stylesheet" />
-    <link href="https://d14tqcyg1o920w.cloudfront.net/Wordpress/css/WordPressPlugin.css?v=1.0.0.0" rel="stylesheet" />
-    <script type="text/javascript" src="https://d14tqcyg1o920w.cloudfront.net/Wordpress/js/wordpressplugin.js"></script>
+    <link href="https://d14tqcyg1o920w.cloudfront.net/api/css/passle-feed.css?v=1.0.0.0" rel="stylesheet" />
+    <script type="text/javascript" src="https://d14tqcyg1o920w.cloudfront.net/api/js/passle-feed-plugin.js"></script>
     <title>Passle Feed Example</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="passle-shortcode">
-            <%=PassleFeed.RenderXml(String.Format("https://www.passle.net/pluginfeed/{0}/{1}/{2}", PassleFeedShortCode, PassleFeedPageToDisplay, PassleFeedNumberOfPostsToDisplayPerPage), "https://d14tqcyg1o920w.cloudfront.net/Wordpress/XSLT/PassleFeed.xsl", Nothing)%>
+            <%=PassleFeed.RenderXml(String.Format("https://www.passle.net/pluginfeed/{0}/{1}/{2}", PassleFeedShortCode, PassleFeedPageToDisplay, PassleFeedNumberOfPostsToDisplayPerPage), "https://www.passle.net/api/feed/xslt", Nothing)%>
         </div>
     </form>
 </body>
