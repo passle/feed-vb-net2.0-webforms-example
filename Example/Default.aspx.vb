@@ -7,8 +7,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         PassleFeedShortCode = "2cxn"
-        PassleFeedPageToDisplay = 1
         PassleFeedNumberOfPostsToDisplayPerPage = 15
+        PassleFeedPageToDisplay = 1
     End Sub
-
 End Class

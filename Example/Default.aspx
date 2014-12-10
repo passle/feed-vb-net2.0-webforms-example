@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="passle-shortcode">
-            <%=PassleFeed.RenderXml(String.Format("https://www.passle.net/pluginfeed/{0}/{1}/{2}", PassleFeedShortCode, PassleFeedPageToDisplay, PassleFeedNumberOfPostsToDisplayPerPage), "https://www.passle.net/api/feed/xslt", Nothing)%>
+            <%=PassleFeed.RenderFeed(PassleFeedShortCode, PassleFeedPageToDisplay, PassleFeedNumberOfPostsToDisplayPerPage)%>
         </div>
     </form>
 </body>

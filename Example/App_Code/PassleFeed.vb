@@ -3,6 +3,13 @@ Imports System.Xml
 Imports System.IO
 
 Public Class PassleFeed
+    Public Shared Function RenderFeed(shortcode As String, pageNumber As Integer, postsPerPage As Integer) As String
+        Dim xmlPath As String = String.Format("https://www.passle.net/pluginfeed/{0}/{1}/{2}", shortcode, pageNumber, postsPerPage)
+        Dim xsltPath As String = "https://d14tqcyg1o920w.cloudfront.net/Wordpress/XSLT/PassleFeed.xsl"
+        Dim parameters As IDictionary(Of String, String) = Nothing
+        Return RenderXml(xmlPath, xsltPath, parameters)
+    End Function
+
     Public Shared Function RenderXml(xmlPath As String, xsltPath As String, parameters As IDictionary(Of String, String)) As String
         Dim args As New XsltArgumentList()
         If parameters IsNot Nothing Then
@@ -23,5 +30,4 @@ Public Class PassleFeed
             Return writer.ToString()
         End Using
     End Function
-
 End Class
